@@ -7,7 +7,7 @@ from pywarp.parsers.oml import OMLEngine
 from pywarp.parsers.knowdb import KnowledgeDatabase
 
 # --- Page Config MUST BE THE FIRST STREAMLIT COMMAND ---
-st.set_page_config(layout="wide", page_title="PyWarp | AI Data Gateway", page_icon="🚀")
+st.set_page_config(layout="wide", page_title="PyWarp | AI Data Gateway & ETL Pipeline", page_icon="🚀")
 
 # --- Initialize the Engine Components ---
 @st.cache_resource
@@ -15,9 +15,6 @@ def load_engine():
     return WPLParser(), OMLEngine(), KnowledgeDatabase()
 
 wpl, oml, know = load_engine()
-
-# --- Page Config & CSS ---
-st.set_page_config(layout="wide", page_title="PyWarp | AI Data Gateway", page_icon="🚀")
 
 st.markdown("""
     <style>
