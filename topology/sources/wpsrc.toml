@@ -1,0 +1,8 @@
+[[sources]]
+key = "file_1"
+enable = true
+connect = "file_src"
+
+[sources.params]
+base = "./data/in_dat"
+file = "gen.dat"

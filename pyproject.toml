@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pywarp"
+version = "0.15.6"
+description = "High-performance Python ETL engine for observability and data pipelines."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.5.0",
+    "typer>=0.9.0",
+    "aiokafka>=0.10.0",
+    "rich>=13.0.0",
+]
+
+[project.scripts]
+wparse = "pywarp.cli.main:app"
+wproj = "pywarp.cli.wproj:app"
+wpgen = "pywarp.cli.wpgen:app"
+wprescue = "pywarp.cli.wprescue:app"

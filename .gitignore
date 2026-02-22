@@ -1,0 +1,33 @@
+# Python bytecode
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment & Secrets
+venv/
+env/
+.env
+**/.streamlit/secrets.toml
+
+# Project specific data & test outputs
+data/in_dat/gen.dat
+data/in_dat/in.dat
+data/out_dat/*.json
+*.csv
+
+# Databases
+*.db
+*.sqlite3
+
+# Packaging
+*.egg-info/
+dist/
+build/
+
+# IDEs & OS Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+
