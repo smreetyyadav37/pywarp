@@ -1,22 +1,20 @@
-# Use a lightweight Python 3.11 base image
+# Use a lightweight Python 3.11 image
 FROM python:3.11-slim
 
-# Prevent Python from writing .pyc files and force stdout logging
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-
-# Set the working directory inside the container
+# Set the working directory
 WORKDIR /app
 
-# Copy the project files into the container
-COPY pyproject.toml README.md ./
-COPY src/ ./src/
+# Copy the project files
+COPY . /app
 
-# Install the package and its dependencies
-RUN pip install --no-cache-dir -e .
+# Install dependencies (added setuptools to fix the pyproject.toml bug)
+RUN pip install --upgrade pip
+RUN pip install setuptools wheel
+RUN pip install -r requirements.txt
+RUN pip install -e .
 
-# Create the standard data and configuration directories
-RUN mkdir -p data/in_dat data/out_dat topology/sources topology/sinks/business.d
+# Expose Streamlit's default port
+EXPOSE 10000
 
-# By default, run the daemon when the container starts
-CMD ["wparse", "daemon"]
+# Command to run the dashboard
+CMD ["streamlit", "run", "app.py", "--server.port=10000", "--server.address=0.0.0.0"]
