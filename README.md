@@ -3,6 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
 ![Architecture](https://img.shields.io/badge/Architecture-Hybrid_Concurrency-success)
 ![Data Quality](https://img.shields.io/badge/Data_Quality-Enterprise_Grade-orange)
+![Deployment](https://img.shields.io/badge/Deployment-Docker%20%7C%20Render-blueviolet)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
 **PyWarp** is an innovative, high-throughput ETL (Extract, Transform, Load) engine designed to transform chaotic, unstructured operational logs into clean, enriched, and privacy-compliant data streams. 
@@ -10,6 +11,12 @@
 It serves as a secure bridge between raw infrastructure telemetry and sophisticated downstream systems like AI/ML models, Security Information and Event Management (SIEM) platforms, and Observability dashboards.
 
 
+
+## 🌐 Live Demo & Cloud Architecture
+The engine is currently deployed as a fully containerized web service.
+* **Live Interactive Dashboard:** [PyWarp Gateway on Render](https://pywarp-gateway.onrender.com) *(Replace with your actual URL)*
+* **Infrastructure:** Packaged via a custom `Dockerfile` and hosted on **Render**'s cloud platform to bypass the limitations of standard serverless functions.
+* **High Availability Hack:** To prevent the free-tier container from hibernating, an automated **UptimeRobot** monitor sends an HTTP ping every 20 minutes, ensuring the gateway remains continuously active 24/7 without cold starts.
 
 ## ✨ Core Architecture & Design Philosophy
 
@@ -51,11 +58,11 @@ PyWarp provides a command-line interface powered by `Typer`:
 * `wpgen`: Blasts the engine with thousands of mock log events per second to stress-test your pipeline.
 * `wprescue`: Recovers failed data from the Dead Letter Queue for re-ingestion.
 
-## 🚀 Quick Start & Deployment
+## 🚀 Local Quick Start
 
-### 1\. Local Setup
+### 1. Repository Setup
 ```bash
-git clone [https://github.com/yourusername/pywarp.git](https://github.com/yourusername/pywarp.git)
+git clone [https://github.com/smreetyyadav37/pywarp.git](https://github.com/smreetyyadav37/pywarp.git)
 cd pywarp
 python -m venv venv
 source venv/bin/activate  # Windows: .\venv\Scripts\activate
