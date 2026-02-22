@@ -53,7 +53,7 @@ PyWarp provides a command-line interface powered by `Typer`:
 
 ## 🚀 Quick Start & Deployment
 
-### 1. Local Setup
+### 1\. Local Setup
 ```bash
 git clone [https://github.com/yourusername/pywarp.git](https://github.com/yourusername/pywarp.git)
 cd pywarp
@@ -61,6 +61,7 @@ python -m venv venv
 source venv/bin/activate  # Windows: .\venv\Scripts\activate
 pip install -r requirements.txt
 pip install -e .
+```
 
 ### 2\. Launch the Web Interface
 To interact with the engine visually and view live metrics:
